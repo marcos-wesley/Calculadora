@@ -11,10 +11,11 @@ const initialState = {
   current: 0,
 }
 
+
 export default class App extends Component {
   state = { ...initialState }
 
-  addDigit = n => {
+  addDigit = (n: string) => {
     const clearDisplay = this.state.displayValue === '0'
       || this.state.clearDisplay
     
@@ -39,7 +40,7 @@ export default class App extends Component {
     this.setState({ ...initialState })
   }
 
-  setOperation = operation => {
+  setOperation = (operation: string) => {
     if (this.state.current === 0) {
       this.setState({ operation, current: 1, clearDisplay: true })
     } else {
